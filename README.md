@@ -1,5 +1,6 @@
 Tweemo
 ======
+[![Build Status][]][CI Results]
 
 `tweemo` is a CLI-based twitter client calculating emotional value of tweet.
 
@@ -9,13 +10,13 @@ Tweemo
   (if there is a word which doesn't exist in dictionaries, the value is 0).
   Then, calculates an average value, and appends it to tweet.
 
-* Used dictionaries [Semantic Orientations of Words](http://www.lr.pi.titech.ac.jp/~takamura/pndic_en.html)
+* Used dictionaries [Semantic Orientations of Words][dict]
 
 ## Requirement
 
-* [MeCab](https://code.google.com/p/mecab/) (required to tweet in Japanese)
-* [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) (required to tweet in English)
-* [MPlayer](www.mplayerhq.hu/) (required to User streams with speech)
+* [MeCab][] (required to tweet in Japanese)
+* [TreeTagger][] (required to tweet in English)
+* [MPlayer][] (required to User streams with speech)
 * Perl modules (AnyEvent::Twitter::Stream, DBD::SQLite, DBI, File::Which, Math::Round, Moo, Net::Twitter::Lite::WithAPIv1_1, Statistics::Lite, YAML::Tiny)
 
 ## Usage
@@ -127,7 +128,8 @@ Tweemo
 # or, download https://github.com/r6eve/tweemo/archive/master.zip
 ```
 
-Then, edit `CONSUMER_KEY` and `CONSUMER_SECRET` in lib/Tweemo/Account.pm.
+Then, create Twitter consumer key and consumer secret in [Twitter Application Management][],
+and edit `CONSUMER_KEY` and `CONSUMER_SECRET` in lib/Tweemo/Account.pm.
 
 If you want to tweet in English, you should install TreeTagger. Then, add treetagger/{bin,cmd} to PATH.
 
@@ -169,3 +171,11 @@ If you want to tweet in English, you should install TreeTagger. Then, add treeta
 # plot (you should install R and ggplot2)
 > tweemo tl -n 200 |perl -nle 'print $1 if /^(?:: .+)?: (.+ https?:.+)$/' |sort |uniq -c |sort -nr |Rscript --vanilla tips/plot_cli.R
 ```
+
+[Build Status]: https://travis-ci.org/r6eve/tweemo.svg?branch=master
+[CI Results]: https://travis-ci.org/r6eve/tweemo
+[dict]: http://www.lr.pi.titech.ac.jp/~takamura/pndic_en.html
+[MeCab]: http://taku910.github.io/mecab/
+[TreeTagger]: http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/
+[MPlayer]: http://mplayerhq.hu/design7/news.html
+[Twitter Application Management]: https://apps.twitter.com/

@@ -102,8 +102,8 @@ orientations of words.
 
 =head2 DEPENDENCIES
 
-If you tweet japanese message, install Mecab, and if also tweet english
-message, install TreeTagger, too.
+If you tweet in Japanese, install MeCab, and if also tweet in English, install
+TreeTagger.
 
 =head1 AUTHOR
 
@@ -115,7 +115,7 @@ r6eve 2014-
 
 =head1 LICENSE
 
-L<The MIT License|http://opensource.org/licenses/MIT>
+L<Boost Software License - Version 1.0|https://www.boost.org/LICENSE_1_0.txt>
 
 =head1 SEE ALSO
 
